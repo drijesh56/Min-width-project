@@ -1,0 +1,151 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background: #0f172a;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span { color: #38bdf8; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li { margin-left: 25px; }
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #38bdf8; }
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1470') center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero h1 span { color: #38bdf8; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; }
+
+.btn {
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn.primary { background: #38bdf8; color: #fff; margin-right: 15px; }
+.btn.secondary { border: 2px solid #fff; color: #fff; }
+
+/* --- Services --- */
+.services { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+
+.service-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Default for tiny phones */
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover { transform: translateY(-10px); }
+
+.service-card i {
+    font-size: 3rem;
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+/* --- Footer --- */
+.footer { background: #0f172a; color: white; text-align: center; padding: 40px 0; }
+
+/* --- MEDIA QUERIES --- */
+
+/* 576px (Small Devices / Landscape Phones) */
+@media (min-width: 576px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+/* 768px (Tablets) */
+@media (min-width: 768px) {
+    .hero h1 { font-size: 3.5rem; }
+    .nav-links { display: flex; }
+}
+
+/* 992px (Laptops / Small Desktops) */
+@media (min-width: 992px) {
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+    .hero { height: 90vh; }
+}
+
+/* 1200px (Extra Large Screens) */
+@media (min-width: 1200px) {
+    .container { width: 85%; }
+    .service-grid { gap: 30px; }
+}
+
+/* Specific fix for very small screens */
+@media (max-width: 575px) {
+    .nav-links { display: none; } /* Mobile menu typically needs JS, hiding for simplicity */
+    .hero-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn { margin-right: 0; width: 80%; }
+}
